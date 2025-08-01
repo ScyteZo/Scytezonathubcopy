@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nat Hub - Grow a Garden</title>
+    <style>
+        body {
+            font-family: 'Arial Black', Arial, sans-serif;
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #000000;
+            color: #ffffff;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            top: 0;
+            left: 0;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 80%;
+            max-width: 600px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .youtube-creator {
+            font-size: 20px;
+            margin-bottom: 5px;
+            color: #00bfff;
+            text-shadow: 0 0 5px #00bfff, 0 0 10px #00bfff;
+            letter-spacing: 1px;
+        }
+        
+        .logo {
+            font-size: 42px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #00bfff;
+            text-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff, 0 0 30px #00bfff;
+            animation: neonGlow 1.5s ease-in-out infinite alternate;
+            letter-spacing: 2px;
+        }
+        
+        @keyframes neonGlow {
+            from {
+                text-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff, 0 0 30px #00bfff;
+            }
+            to {
+                text-shadow: 0 0 15px #00bfff, 0 0 30px #00bfff, 0 0 45px #00bfff, 0 0 60px #87cefa;
+            }
+        }
+        
+        .tagline {
+            font-size: 20px;
+            margin-bottom: 30px;
+            color: #aaa;
+            text-shadow: 0 0 5px #aaa;
+        }
+        
+        .text-box {
+            width: 100%;
+            padding: 20px;
+            border: 2px solid #00bfff;
+            border-radius: 8px;
+            min-height: 120px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            resize: none;
+            background-color: rgba(17, 17, 17, 0.8);
+            color: #fff;
+            font-size: 16px;
+            overflow: auto;
+            pointer-events: none;
+            user-select: all;
+            box-shadow: 0 0 15px #00bfff;
+            text-align: center;
+            line-height: 1.5;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .copy-btn {
+            background-color: #00bfff;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 0 10px #00bfff;
+            font-weight: bold;
+            margin-top: 20px;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .copy-btn:hover {
+            background-color: #87cefa;
+            box-shadow: 0 0 25px #00bfff;
+            transform: scale(1.05);
+        }
+        
+        .notification {
+            display: none;
+            color: #00bfff;
+            margin-top: 20px;
+            font-size: 16px;
+            text-shadow: 0 0 10px #00bfff;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+    
+    <div class="container">
+        <div class="youtube-creator">YT: SCYTEZO</div>
+        <div class="logo">NAT HUB</div>
+        <div class="tagline">grow a garden</div>
+        
+        <div class="text-box" id="textBox">loadstring(game:HttpGet("https://get.nathub.xyz/loader"))()</div>
+        
+        <button class="copy-btn" id="copyButton">COPY SCRIPT</button>
+        <div class="notification" id="notification">SCRIPT COPIED SUCCESSFULLY!</div>
+    </div>
+    
+    <!-- Load particles.js library -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
+    <script>
+        // Initialize particles.js with light blue colors
+        document.addEventListener('DOMContentLoaded', function() {
+            particlesJS('particles-js', {
+                "particles": {
+                    "number": {
+                        "value": 80,
+                        "density": {
+                            "enable": true,
+                            "value_area": 800
+                        }
+                    },
+                    "color": {
+                        "value": "#00bfff"
+                    },
+                    "shape": {
+                        "type": "circle",
+                        "stroke": {
+                            "width": 0,
+                            "color": "#000000"
+                        },
+                        "polygon": {
+                            "nb_sides": 5
+                        }
+                    },
+                    "opacity": {
+                        "value": 0.5,
+                        "random": true,
+                        "anim": {
+                            "enable": true,
+                            "speed": 1,
+                            "opacity_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "size": {
+                        "value": 3,
+                        "random": true,
+                        "anim": {
+                            "enable": true,
+                            "speed": 2,
+                            "size_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 150,
+                        "color": "#00bfff",
+                        "opacity": 0.4,
+                        "width": 1
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 2,
+                        "direction": "none",
+                        "random": true,
+                        "straight": false,
+                        "out_mode": "out",
+                        "bounce": false,
+                        "attract": {
+                            "enable": true,
+                            "rotateX": 600,
+                            "rotateY": 1200
+                        }
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": true,
+                            "mode": "grab"
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push"
+                        },
+                        "resize": true
+                    },
+                    "modes": {
+                        "grab": {
+                            "distance": 140,
+                            "line_linked": {
+                                "opacity": 1
+                            }
+                        },
+                        "bubble": {
+                            "distance": 400,
+                            "size": 40,
+                            "duration": 2,
+                            "opacity": 8,
+                            "speed": 3
+                        },
+                        "repulse": {
+                            "distance": 200,
+                            "duration": 0.4
+                        },
+                        "push": {
+                            "particles_nb": 4
+                        },
+                        "remove": {
+                            "particles_nb": 2
+                        }
+                    }
+                },
+                "retina_detect": true
+            });
+        });
+
+        // Copy functionality
+        document.getElementById('copyButton').addEventListener('click', function() {
+            const textToCopy = document.getElementById('textBox').textContent;
+            
+            navigator.clipboard.writeText(textToCopy)
+                .then(() => {
+                    const notification = document.getElementById('notification');
+                    notification.style.display = 'block';
+                    
+                    const copyButton = document.getElementById('copyButton');
+                    copyButton.textContent = 'COPIED!';
+                    copyButton.style.backgroundColor = '#00ff7f';
+                    copyButton.style.boxShadow = '0 0 25px #00ff7f';
+                    
+                    setTimeout(() => {
+                        notification.style.display = 'none';
+                        copyButton.textContent = 'COPY SCRIPT';
+                        copyButton.style.backgroundColor = '#00bfff';
+                        copyButton.style.boxShadow = '0 0 10px #00bfff';
+                    }, 2000);
+                })
+                .catch(err => {
+                    console.error('Failed to copy text: ', err);
+                    alert('Failed to copy text. Please try again.');
+                });
+        });
+    </script>
+</body>
+</html>
